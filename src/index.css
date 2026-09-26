@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: linear-gradient(180deg, #090714 0%, #120c2b 60%, #0d0820 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Animated gradient background grid */
+.cyber-grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Glowing text */
+.text-glow-purple {
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.3);
+}
+.text-glow-gold {
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Card 3D tilt effect */
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.card-3d:hover {
+  transform: translateY(-8px) perspective(800px) rotateX(3deg);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.25), 0 0 40px rgba(6, 182, 212, 0.15);
+}
+
+/* Neon backlight behind cards */
+.neon-backlight {
+  position: relative;
+}
+.neon-backlight::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.3), rgba(245, 158, 11, 0.15));
+  opacity: 0;
+  z-index: -1;
+  filter: blur(12px);
+  transition: opacity 0.4s ease;
+}
+.neon-backlight:hover::before {
+  opacity: 0.8;
+}
+
+/* Blurred locked code */
+.locked-code {
+  filter: blur(6px);
+  user-select: none;
+  transition: filter 0.4s ease;
+}
+
+/* Terminal scanline effect */
+.terminal-scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.terminal-scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.3), transparent);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0820;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+}
+
+/* Hide scrollbar on modal */
+.modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Progress bar gradient */
+.progress-gradient {
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #f59e0b);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Button glow on hover */
+.btn-glow {
+  transition: all 0.3s ease;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.25);
+}
+
+.btn-glow-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5), 0 0 40px rgba(245, 158, 11, 0.25);
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
