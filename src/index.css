@@ -7,7 +7,11 @@
 }
 
 body {
-  background: linear-gradient(180deg, #090714 0%, #120c2b 60%, #0d0820 100%);
+  background: linear-gradient(180deg, #090714 0%, #120c2b 60%, #0d0820 100%), 
+              url('https://raw.githubusercontent.com/hainul4000-blip/freeplaygame.online/refs/heads/main/images/background.jfif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
