@@ -47,12 +47,7 @@ export function GameCard({ game, onClaim, index }: GameCardProps) {
 
       {/* Game Artwork */}
       <div className="relative mb-4 overflow-hidden rounded-xl border border-cyber-border">
-        <img
-          src={game.image}
-          alt={`${game.name} game artwork`}
-          loading="lazy"
-          className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-36"
-        />
+       <img src={game.image} alt={`${game.name} game artwork`} loading="lazy" className="h-32 w-full object-contain p-2 transition-transform duration-500 group-hover:scale-110 sm:h-36" />
         <div className="absolute inset-0 bg-gradient-to-t from-cyber-deep/90 via-cyber-deep/20 to-transparent" />
         <div className="absolute bottom-2 left-2 flex h-9 w-9 items-center justify-center rounded-lg border border-neon-purple/40 bg-cyber-deep/80 backdrop-blur-sm group-hover:animate-glowPulse">
           <Icon className="h-5 w-5 text-neon-cyan" />
